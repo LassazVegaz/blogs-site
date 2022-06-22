@@ -1,5 +1,11 @@
+import { BlogsListPage } from "./pages/BogsListPage/BlogsListPage";
+
 function App() {
-	return <div>Hello World</div>;
+	return (
+		<>
+			<BlogsListPage />
+		</>
+	);
 }
 
 export default App;
