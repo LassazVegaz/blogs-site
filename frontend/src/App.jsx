@@ -1,9 +1,9 @@
-import { BlogsListPage } from "./pages/BogsListPage/BlogsListPage";
+import { AddEditBlogPage } from "./pages/AddBlogPage/AddEditBlogPage";
 
 function App() {
 	return (
 		<>
-			<BlogsListPage />
+			<AddEditBlogPage />
 		</>
 	);
 }
