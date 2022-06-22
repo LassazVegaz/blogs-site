@@ -2,5 +2,6 @@ import { styled, Container } from "@mui/material";
 
 export const PageContainer = styled(Container)({
 	maxWidth: "lg",
-	py: 3,
+	paddingTop: 10,
+	paddingBottom: 30,
 });
