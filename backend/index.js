@@ -2,14 +2,26 @@ import Koa from "koa";
 import dotenv from "dotenv";
 import bodyParser from "koa-bodyparser";
 import { blogsRouter } from "./routers/blogs.router";
+import { dbService } from "./services/db.service";
 
 dotenv.config();
 
-const app = new Koa();
-const port = process.env.PORT;
+const run = async () => {
+	console.log("Connecting to database...");
+	await dbService.connect();
 
-app.use(bodyParser());
+	const koaApp = new Koa();
+	const port = process.env.PORT;
 
-app.use(blogsRouter.routes());
+	koaApp.use(bodyParser());
 
-app.listen(port, () => console.log(`App is listening to port ${port}`));
+	koaApp.use(blogsRouter.routes());
+
+	koaApp.listen(port, () => console.log(`App is listening to port ${port}`));
+};
+
+run()
+	.catch((e) => {
+		console.error("App crashed", e);
+	})
+	.finally("App closed");
