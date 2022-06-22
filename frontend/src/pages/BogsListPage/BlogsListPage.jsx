@@ -1,6 +1,5 @@
 import {
 	Box,
-	Container,
 	List,
 	ListItemButton,
 	ListItemIcon,
@@ -9,6 +8,7 @@ import {
 	Fab,
 } from "@mui/material";
 import { Bed as BedIcon, Add as AddIcon } from "@mui/icons-material";
+import { PageContainer } from "../../components/PageContainer";
 
 const BlogItem = () => {
 	return (
@@ -24,12 +24,7 @@ const BlogItem = () => {
 export const BlogsListPage = () => {
 	return (
 		<>
-			<Container
-				maxWidth="lg"
-				sx={{
-					py: 3,
-				}}
-			>
+			<PageContainer>
 				<Typography variant="h3" textAlign="center">
 					Available Blogs
 				</Typography>
@@ -51,7 +46,7 @@ export const BlogsListPage = () => {
 						<BlogItem />
 					</List>
 				</Box>
-			</Container>
+			</PageContainer>
 
 			<Fab
 				sx={{
