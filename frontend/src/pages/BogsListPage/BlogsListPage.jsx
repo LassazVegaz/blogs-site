@@ -6,8 +6,9 @@ import {
 	ListItemIcon,
 	ListItemText,
 	Typography,
+	Fab,
 } from "@mui/material";
-import { Bed as BedIcon } from "@mui/icons-material";
+import { Bed as BedIcon, Add as AddIcon } from "@mui/icons-material";
 
 const BlogItem = () => {
 	return (
@@ -22,33 +23,45 @@ const BlogItem = () => {
 
 export const BlogsListPage = () => {
 	return (
-		<Container
-			maxWidth="lg"
-			sx={{
-				py: 3,
-			}}
-		>
-			<Typography variant="h3" textAlign="center">
-				Available Blogs
-			</Typography>
-
-			<Box
+		<>
+			<Container
+				maxWidth="lg"
 				sx={{
-					display: "flex",
-					justifyContent: "center",
+					py: 3,
 				}}
 			>
-				<List
+				<Typography variant="h3" textAlign="center">
+					Available Blogs
+				</Typography>
+
+				<Box
 					sx={{
-						mt: 10,
-						width: 600,
+						display: "flex",
+						justifyContent: "center",
 					}}
 				>
-					<BlogItem />
-					<BlogItem />
-					<BlogItem />
-				</List>
-			</Box>
-		</Container>
+					<List
+						sx={{
+							mt: 10,
+							width: 600,
+						}}
+					>
+						<BlogItem />
+						<BlogItem />
+						<BlogItem />
+					</List>
+				</Box>
+			</Container>
+
+			<Fab
+				sx={{
+					position: "fixed",
+					right: 10,
+					bottom: 10,
+				}}
+			>
+				<AddIcon />
+			</Fab>
+		</>
 	);
 };
